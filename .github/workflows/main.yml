@@ -1,0 +1,38 @@
+name: SCHEDULE
+
+on: 
+ push: 
+  branches: 
+   - main  
+ schedule:
+    - cron : '0 * * * *'
+
+jobs:
+  store:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Set up nodejs and install dependencies
+      uses: actions/setup-node@v1
+      with:
+       node-version: '12'
+    - name: install yarn  
+      run: npm install -g yarn
+    - name: install dependency  
+      run: yarn
+    - name: run script
+      run: yarn start
+    - name: Commit files
+      run: |
+        git config --local user.email "${{secrets.email}}"
+        git config --local user.name "resaqulyubi"
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        branch: main
+    
