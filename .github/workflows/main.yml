@@ -34,5 +34,5 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.PERSONAL_TOKEN }}
-        branch: main
+        branch: master
     
