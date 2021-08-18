@@ -1,6 +1,6 @@
 # store covid daily api as json data
 
-- last cronjob : Tuesday, 17 August 2021 13:19:07
+- last cronjob : Wednesday, 18 August 2021 00:39:56
 - status og cron : success
 - status daily cron : success
       
