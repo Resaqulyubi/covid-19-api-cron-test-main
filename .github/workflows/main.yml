@@ -16,13 +16,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Set up nodejs and install dependencies
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
-       node-version: '12'
+       node-version: '20'
     - name: install yarn  
       run: npm install -g yarn
     - name: install dependency  
       run: yarn
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps chromium
     - name: run script
       run: yarn start
     - name: Commit files

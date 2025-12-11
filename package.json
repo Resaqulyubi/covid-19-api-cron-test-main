@@ -14,7 +14,7 @@
     "date-fns": "^2.16.1",
     "isomorphic-unfetch": "^3.1.0",
     "pbf": "^3.2.1",
-    "playwright": "^1.5.0",
+    "playwright": "^1.49.0",
     "qs": "^6.9.4"
   },
   "devDependencies": {
